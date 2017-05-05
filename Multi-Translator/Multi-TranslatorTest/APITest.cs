@@ -7,7 +7,7 @@ namespace Multi_TranslatorTest
     public class APITest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ParseJSONTest()
         {
 
         }
