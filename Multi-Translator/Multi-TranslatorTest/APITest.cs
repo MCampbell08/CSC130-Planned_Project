@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Net;
+using System.Windows;
+using System.Web;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace Multi_TranslatorTest
 {
@@ -7,8 +12,39 @@ namespace Multi_TranslatorTest
     public class APITest
     {
         [TestMethod]
-        public void ParseJSONTest()
+        public void ParseTest()
         {
+
+            string expectedData = "{\n  \"data\": {\n    \"translations\": [\n      {\n        \"translatedText\": \"Hola, mi nombre es Bob.\"\n      }\n    ]\n  }\n}\n";
+            JObject expectedParsedData = JObject.Parse(expectedData);
+
+            string actualData = new StreamReader("sample.json").ReadToEnd();
+            JObject actualParsedData = JObject.Parse(actualData);
+
+            Assert.AreEqual(actualParsedData["translatedText"], expectedParsedData["translatedText"]);
+        }
+        [TestMethod]
+        public void Translate()
+        {
+            string text = "Hello, my name is Bob.";
+            string expected = "{\n  \"data\": {\n    \"translations\": [\n      {\n        \"translatedText\": \"Hola, mi nombre es Bob.\"\n      }\n    ]\n  }\n}\n";
+            string actual = "";
+            string source = "EN";
+            string target = "ES";
+            string url = "https://translation.googleapis.com/language/translate/v2?key=AIzaSyDF_M6DlvJXlLchm0YF8iHQoxTN-IRSgT8";
+            url += "&source=" + source;
+            url += "&target=" + target;
+            url += "&q=" + text;
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+
+            WebResponse response = request.GetResponse();
+            actual = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+            Console.Write(actual);
+
+            Assert.AreEqual(expected, actual);
 
         }
     }
