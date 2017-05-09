@@ -43,7 +43,17 @@ namespace Multi_Translator
             ApiData apiData = new ApiData();
 
             string input = inputText.Text.ToString();
-            //trans.Translate(input, trans.DetectLanguage(input), target);
+            string targetedLanguage = "en";
+            string detectedLanguage = trans.DetectLanguage(input);
+            foreach (var lang in languages.Languages)
+            {
+                if (lang.Key == languageList_output.SelectedItem.ToString())
+                {
+                    targetedLanguage = lang.Value;
+                }
+            }
+            trans.Translate(input, detectedLanguage, targetedLanguage);
+            outputText.Text = trans.GetTranslatedText();
         }
     }
 }

@@ -39,7 +39,8 @@ namespace Multi_Translator
             WebResponse response = request.GetResponse();
 
             JObject tempParse = JObject.Parse(new StreamReader(response.GetResponseStream()).ReadToEnd());
-            return tempParse["detections"][0]["language"].ToString();
+            JArray parse = JArray.Parse(tempParse["data"]["detections"][0].ToString());
+            return parse[0]["language"].ToString(); ;
         }
         public string GetTranslatedText()
         {

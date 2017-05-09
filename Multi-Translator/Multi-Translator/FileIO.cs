@@ -13,7 +13,7 @@ namespace Multi_Translator
         public Dictionary<string,string> ReadFromFile(Language language)
         {
             string fileLine = "";
-            using (StreamReader file = new StreamReader("Languages.txt"))
+            using (StreamReader file = new StreamReader("C:..\\Languages.txt"))
                 while (!file.EndOfStream)
                 {
                     fileLine = file.ReadLine();
