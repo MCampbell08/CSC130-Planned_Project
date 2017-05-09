@@ -11,21 +11,24 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <ComboBox Name="languageList"
+        <ComboBox Name="languageList_input"
                   Height="20" 
-                  Width="200" 
-                  Grid.Column="1"
-                  Margin="10px,10px,10px,100px"/>
+                  Width="200"
+                  Margin="29,85,29,215"/>
         <TextBlock Name="inputText"
                    Grid.Column="0" 
-                   Margin="10px,10px,10px,100px"/>
+                   Margin="10,30,10,240"/>
         <TextBlock Name="outputText"
                    Grid.Column="1" 
-                   Margin="10px,150px,10px,10px"/>
+                   Margin="10,30,10,240"/>
         <Button Name="translateButton"
                 Grid.Column="0"
-                Margin="75px,250px,75px,40px"
+                Margin="206,145,203,145"
                 Content="Translate"
-                Click="translateButton_Click"/>
+                Click="translateButton_Click" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="languageList_output"
+            Height="20" 
+            Width="200"
+            Margin="28,85,31,215" Grid.Column="1"/>
     </Grid>
 </Window>
