@@ -44,7 +44,7 @@ namespace Multi_Translator
         }
         public string GetTranslatedText()
         {
-            return data["translatedText"].ToString();
+            return data["data"]["translations"][0]["translatedText"].ToString();
         }
     }
 }
