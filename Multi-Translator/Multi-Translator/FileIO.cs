@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Multi_Translator.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,9 +10,8 @@ namespace Multi_Translator
 {
     public class FileIO
     {
-        public Dictionary<string,string> ReadFromFile()
+        public Dictionary<string,string> ReadFromFile(Language language)
         {
-            Dictionary<string, string> language = new Dictionary<string, string>();
             string fileLine = "";
             using (StreamReader file = new StreamReader("C:..\\Languages.txt"))
                 while (!file.EndOfStream)
@@ -20,10 +20,10 @@ namespace Multi_Translator
                     var items = fileLine.Split(new[] { '(', ')' }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Split(new[] { '=' }));
                     foreach (var item in items)
                     {
-                        language.Add(item[0], item[1]);
+                        language.Languages.Add(item[0], item[1]);
                     }
                 }
-            return language;
+            return language.Languages;
         }
     }
 }

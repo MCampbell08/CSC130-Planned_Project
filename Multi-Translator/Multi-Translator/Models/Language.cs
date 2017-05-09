@@ -8,6 +8,6 @@ namespace Multi_Translator.Models
 {
     public class Language
     {
-        Dictionary<String, String> Languages { get; set; }
+        public Dictionary<String, String> Languages { get; set; }
     }
 }
