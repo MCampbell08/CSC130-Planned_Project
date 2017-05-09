@@ -20,7 +20,7 @@ namespace Multi_Translator
                     var items = fileLine.Split(new[] { '(', ')' }, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Split(new[] { '=' }));
                     foreach (var item in items)
                     {
-                        language.Languages.Add(item[0], item[1]);
+                        language.Languages.Add(item[0].ToString(), item[1].ToString());
                     }
                 }
             return language.Languages;

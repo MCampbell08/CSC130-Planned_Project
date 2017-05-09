@@ -31,10 +31,13 @@ namespace Multi_Translator
         {
             //Read from file and fill the Languages in the ComboBox on right.
             FileIO fileIo = new FileIO();
-            languages.Languages = fileIo.ReadFromFile();
+            languages.Languages = new Dictionary<string, string>();
+            languages.Languages = fileIo.ReadFromFile(languages);
+            languageList_output.ItemsSource = languages.Languages.Keys;
+            languageList_output.SelectedIndex = 21;
         }
 
-        private void translateButton_Click(object sender, RoutedEventArgs e)
+        private void TranslateButton_Click(object sender, RoutedEventArgs e)
         {
             Translator trans = new Translator();
             ApiData apiData = new ApiData();

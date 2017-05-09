@@ -8,8 +8,8 @@ namespace Multi_Translator
 {
     public class ApiData
     {
-        string inputText { get; set; }
-        string outputText { get; set; }
-        string language { get; set; }
+        string InputText { get; set; }
+        string OutputText { get; set; }
+        string Language { get; set; }
     }
 }
