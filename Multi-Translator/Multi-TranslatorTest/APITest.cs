@@ -14,7 +14,6 @@ namespace Multi_TranslatorTest
         [TestMethod]
         public void ParseTest()
         {
-
             string expectedData = "{\n  \"data\": {\n    \"translations\": [\n      {\n        \"translatedText\": \"Hola, mi nombre es Bob.\"\n      }\n    ]\n  }\n}\n";
             JObject expectedParsedData = JObject.Parse(expectedData);
 
@@ -45,6 +44,12 @@ namespace Multi_TranslatorTest
             Console.Write(actual);
 
             Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void ParseTest()
+        {
 
         }
     }

@@ -11,6 +11,5 @@ namespace Multi_Translator
         string inputText { get; set; }
         string outputText { get; set; }
         string language { get; set; }
-        string test;
     }
 }
