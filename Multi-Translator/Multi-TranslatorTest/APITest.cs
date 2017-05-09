@@ -64,5 +64,15 @@ namespace Multi_TranslatorTest
 
             Assert.AreEqual(expectedLangDetect, actualLangDetect);
         }
+        [TestMethod]
+        public void ReadFromFile()
+        {
+            FileStream stream = new FileStream("..\\Languages.txt", FileMode.OpenOrCreate);
+            if (stream.CanRead && stream != null)
+            {
+                Assert.IsTrue(stream.CanRead);
+                stream.Close();
+            }
+        }
     }
 }
