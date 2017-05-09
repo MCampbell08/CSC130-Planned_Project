@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ComboBox Name="languageList"
+                  Height="20" 
+                  Width="200" 
+                  Grid.Column="1"
+                  Margin="10px,10px,10px,100px"/>
+        <TextBlock Name="inputText"
+                   Grid.Column="0" 
+                   Margin="10px,10px,10px,100px"/>
+        <TextBlock Name="outputText"
+                   Grid.Column="1" 
+                   Margin="10px,150px,10px,10px"/>
+        <Button Name="translateButton"
+                Grid.Column="0"
+                Margin="75px,250px,75px,40px"
+                Content="Translate"
+                Click="translateButton_Click"/>
     </Grid>
 </Window>

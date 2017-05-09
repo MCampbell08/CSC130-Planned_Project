@@ -24,5 +24,14 @@ namespace Multi_Translator
         {
             InitializeComponent();
         }
+
+        private void translateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Translator trans = new Translator();
+            ApiData apiData = new ApiData();
+
+            string inputs = inputText.Text.ToString();
+            //trans.Translate(inputs, SourceChangedEventArgs, target);
+        }
     }
 }

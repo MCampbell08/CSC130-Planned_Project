@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Multi_Translator
 {
-    public class API
+    public class ApiData
     {
         string inputText { get; set; }
         string outputText { get; set; }
