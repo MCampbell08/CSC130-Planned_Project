@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Multi_Translator.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,17 @@ namespace Multi_Translator
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Language languages = new Language();
         public MainWindow()
         {
             InitializeComponent();
+            InitializeLanguages();
+        }
+        private void InitializeLanguages()
+        {
+            //Read from file and fill the Languages in the ComboBox on right.
+            FileIO fileIo = new FileIO();
+            languages.Languages = fileIo.ReadFromFile();
         }
 
         private void translateButton_Click(object sender, RoutedEventArgs e)
@@ -30,8 +39,8 @@ namespace Multi_Translator
             Translator trans = new Translator();
             ApiData apiData = new ApiData();
 
-            string inputs = inputText.Text.ToString();
-            //trans.Translate(inputs, SourceChangedEventArgs, target);
+            string input = inputText.Text.ToString();
+            //trans.Translate(input, trans.DetectLanguage(input), target);
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Net;
-using System.Windows;
-using System.Web;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using Newtonsoft.Json.Linq;
@@ -41,10 +39,7 @@ namespace Multi_TranslatorTest
             WebResponse response = request.GetResponse();
             actual = new StreamReader(response.GetResponseStream()).ReadToEnd();
 
-            Console.Write(actual);
-
             Assert.AreEqual(expected, actual);
-
         }
         [TestMethod]
         public void DetectLanguageTest()
