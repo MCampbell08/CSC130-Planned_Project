@@ -33,6 +33,7 @@ namespace Multi_Translator
             FileIO fileIo = new FileIO();
             languages.Languages = new Dictionary<string, string>();
             languages.Languages = fileIo.ReadFromFile(languages);
+            languages.Languages.Add("Morse", "morse");
             languageList_output.ItemsSource = languages.Languages.Keys;
             languageList_output.SelectedIndex = 21;
         }
@@ -41,13 +42,19 @@ namespace Multi_Translator
         {
             Translator trans = new Translator();
             ApiData apiData = new ApiData();
+            Morse morse = new Morse();
 
             string input = inputText.Text.ToString();
             string targetedLanguage = "en";
             string detectedLanguage = trans.DetectLanguage(input);
             foreach (var lang in languages.Languages)
             {
-                if (lang.Key == languageList_output.SelectedItem.ToString())
+                if (lang.Key == "Morse")
+                {
+                    outputText.Text = morse.MorseTranslate(input);
+                    break;
+                }
+                else if (lang.Key == languageList_output.SelectedItem.ToString())
                 {
                     targetedLanguage = lang.Value;
                 }

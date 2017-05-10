@@ -90,6 +90,7 @@
     </ApplicationDefinition>
     <Compile Include="FileIO.cs" />
     <Compile Include="Models\Language.cs" />
+    <Compile Include="Morse.cs" />
     <Compile Include="Translator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
