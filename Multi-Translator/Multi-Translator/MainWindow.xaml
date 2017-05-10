@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Multi_Translator"
         mc:Ignorable="d"
-        Title="Multi-Translator" Height="350" Width="525">
+        Title="Multi-Translator" Height="375" Width="550">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -16,18 +16,19 @@
                    Margin="10,30,10,215"/>
         <TextBlock Name="outputText"
                    Grid.Column="1" 
-                   Margin="10,30,10,215"/>
+                   Margin="10,30,10,215"
+                   TextWrapping="Wrap"/>
         <Button Name="translateButton"
-                Margin="204,215,205,75"
+                Margin="204,242,205,48"
                 Content="Translate"
                 Click="TranslateButton_Click" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="languageList_output"
                   Height="20" 
             Width="200"
-            Margin="158,172,159,128"
+            Margin="158,188,159,112"
             Grid.ColumnSpan="2"/>
-        <Label x:Name="inputLabel" Content="Input" HorizontalAlignment="Left" Margin="80,105,0,0" VerticalAlignment="Top" Width="92" HorizontalContentAlignment="Center"/>
-        <Label x:Name="outputLabel" Content="Output" HorizontalAlignment="Left" Margin="80,105,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" HorizontalContentAlignment="Center"/>
-        <Label x:Name="languageLabel" Content="Language To Translate to" HorizontalAlignment="Left" Margin="158,141,0,0" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <Label x:Name="inputLabel" Content="Input" HorizontalAlignment="Left" Margin="81,130,0,0" VerticalAlignment="Top" Width="92" HorizontalContentAlignment="Center"/>
+        <Label x:Name="outputLabel" Content="Output" HorizontalAlignment="Left" Margin="87,130,0,0" VerticalAlignment="Top" Width="92" Grid.Column="1" HorizontalContentAlignment="Center"/>
+        <Label x:Name="languageLabel" Content="Language To Translate to" HorizontalAlignment="Left" Margin="170,156,0,0" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
