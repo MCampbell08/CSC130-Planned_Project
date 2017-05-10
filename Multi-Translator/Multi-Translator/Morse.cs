@@ -40,7 +40,8 @@ namespace Multi_Translator
                 {'W', string.Concat(dot, dash, dash)},
                 {'X', string.Concat(dash, dot, dot, dash)},
                 {'Y', string.Concat(dash, dot, dash, dash)},
-                {'Z', string.Concat(dash, dash, dot, dot)}
+                {'Z', string.Concat(dash, dash, dot, dot)},
+                {' ', "/" }
             };
         }
         
@@ -71,7 +72,12 @@ namespace Multi_Translator
         {
             dict();
             StringBuilder english = new StringBuilder();
-            
+            string[] letter = input.Split(' ');
+            foreach (var l in letter)
+            {
+                var code = morseCode.FirstOrDefault(x => x.Value == l).Key;
+                english.Append(code.ToString());
+            }
             return english.ToString();
         }
     }
