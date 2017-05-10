@@ -46,7 +46,9 @@ namespace Multi_Translator
                 {',', string.Concat(dash, dash, dot, dot, dash, dash)},
                 {'?', string.Concat(dot, dot, dash, dash, dot, dot)},
                 {'!', string.Concat(dot, dot, dash, dash, dot)},
-                {':', string.Concat(dash, dash, dash, dot, dot ,dot)}
+                {':', string.Concat(dash, dash, dash, dot, dot ,dot)},
+                {'\'', string.Concat(dot, dash, dash, dash, dash, dot)},
+                {'\"', string.Concat(dot, dash, dot, dot, dash, dot)}
             };
         }
         
