@@ -83,8 +83,15 @@ namespace Multi_Translator
                     }
                     else
                     {
-                        trans.Translate(input, detectedLanguage, targetedLanguage);
-                        outputText.Text = trans.GetTranslatedText();
+                        if (detectedLanguage != "und")
+                        {
+                            trans.Translate(input, detectedLanguage, targetedLanguage);
+                            outputText.Text = trans.GetTranslatedText();
+                        }
+                        else
+                        {
+                            outputText.Text = input;
+                        }
                         break;
                     }
                 }
