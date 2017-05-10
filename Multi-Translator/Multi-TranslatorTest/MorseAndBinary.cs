@@ -19,7 +19,11 @@ namespace Multi_TranslatorTest
         [TestMethod]
         public void BinaryCodeTest()
         {
-
+            Binary binary = new Binary();
+            string input = "e";
+            string expected = "01100101";
+            string actual = binary.TranslateToBinary(input);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void MorseToEnglish()
