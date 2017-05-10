@@ -41,7 +41,12 @@ namespace Multi_Translator
                 {'X', string.Concat(dash, dot, dot, dash)},
                 {'Y', string.Concat(dash, dot, dash, dash)},
                 {'Z', string.Concat(dash, dash, dot, dot)},
-                {' ', "/" }
+                {' ', "/" },
+                {'.', string.Concat(dot, dash, dot, dash, dot, dash)},
+                {',', string.Concat(dash, dash, dot, dot, dash, dash)},
+                {'?', string.Concat(dot, dot, dash, dash, dot, dot)},
+                {'!', string.Concat(dot, dot, dash, dash, dot)},
+                {':', string.Concat(dash, dash, dash, dot, dot ,dot)}
             };
         }
         

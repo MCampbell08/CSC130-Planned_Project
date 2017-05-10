@@ -41,7 +41,6 @@ namespace Multi_Translator
 
         private void TranslateButton_Click(object sender, RoutedEventArgs e)
         {
-
             Translator trans = new Translator();
             ApiData apiData = new ApiData();
             Morse morse = new Morse();
@@ -56,7 +55,7 @@ namespace Multi_Translator
                 {
                     detectedLanguage = "bin";
                 }
-                else if (input.Contains("-") && input.Contains("."))
+                else if (input.Contains("-") || input.Contains("."))
                 {
                     detectedLanguage = "morse";
                 }
