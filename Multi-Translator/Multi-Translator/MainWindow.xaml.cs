@@ -34,15 +34,18 @@ namespace Multi_Translator
             languages.Languages = new Dictionary<string, string>();
             languages.Languages = fileIo.ReadFromFile(languages);
             languages.Languages.Add("Morse", "morse");
+            languages.Languages.Add("Binary", "binary");
             languageList_output.ItemsSource = languages.Languages.Keys;
             languageList_output.SelectedIndex = 21;
         }
 
         private void TranslateButton_Click(object sender, RoutedEventArgs e)
         {
+
             Translator trans = new Translator();
             ApiData apiData = new ApiData();
             Morse morse = new Morse();
+            Binary binary = new Binary();
 
             string input = inputText.Text.ToString();
             string targetedLanguage = "en";
@@ -52,6 +55,11 @@ namespace Multi_Translator
                 if (lang.Key == "Morse")
                 {
                     outputText.Text = morse.MorseTranslate(input);
+                    break;
+                }
+                else if (lang.Key == "Binary")
+                {
+                    outputText.Text = binary.TranslateToBinary(input);
                     break;
                 }
                 else if (lang.Key == languageList_output.SelectedItem.ToString())
