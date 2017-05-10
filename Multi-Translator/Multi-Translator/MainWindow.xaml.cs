@@ -57,7 +57,8 @@ namespace Multi_Translator
                 }
                 else if (input.Contains("-") || input.Contains("."))
                 {
-                    detectedLanguage = "morse";
+                    input = morse.EnglishTranslate(input);
+                    detectedLanguage = "en";
                 }
             }
             foreach (var lang in languages.Languages)
