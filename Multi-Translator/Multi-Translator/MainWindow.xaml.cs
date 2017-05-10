@@ -50,20 +50,31 @@ namespace Multi_Translator
             string input = inputText.Text.ToString();
             string targetedLanguage = "en";
             string detectedLanguage = trans.DetectLanguage(input);
+            if(detectedLanguage == "und")
+            {
+                if (input.Contains("1") && input.Contains("0"))
+                {
+                    detectedLanguage = "bin";
+                }
+                else if (input.Contains("-") && input.Contains("."))
+                {
+                    detectedLanguage = "morse";
+                }
+            }
             foreach (var lang in languages.Languages)
             {
-                if (lang.Key == "Morse")
+                if (lang.Key == languageList_output.SelectedItem.ToString())
                 {
-                    outputText.Text = morse.MorseTranslate(input);
-                    break;
-                }
-                else if (lang.Key == "Binary")
-                {
-                    outputText.Text = binary.TranslateToBinary(input);
-                    break;
-                }
-                else if (lang.Key == languageList_output.SelectedItem.ToString())
-                {
+                    if (lang.Key == "Morse")
+                    {
+                        outputText.Text = morse.MorseTranslate(input);
+                        break;
+                    }
+                    else if (lang.Key == "Binary")
+                    {
+                        outputText.Text = binary.TranslateToBinary(input);
+                        break;
+                    }
                     targetedLanguage = lang.Value;
                     trans.Translate(input, detectedLanguage, targetedLanguage);
                     outputText.Text = trans.GetTranslatedText();
