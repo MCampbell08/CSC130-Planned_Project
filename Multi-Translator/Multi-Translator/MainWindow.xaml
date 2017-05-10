@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Multi_Translator"
         mc:Ignorable="d"
-        Title="Multi-Translator" Height="375" Width="550">
+        Title="Multi-Translator" Height="375" Width="550"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
