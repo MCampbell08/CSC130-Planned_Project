@@ -12,7 +12,7 @@ namespace Multi_Translator
         public void dict()
         {
             char dot = '.';
-            char dash = '−';
+            char dash = '-';
             morseCode = new Dictionary<char, string>
             {
                 {'A', string.Concat(dot, dash)},
@@ -66,5 +66,13 @@ namespace Multi_Translator
             }
             return code.ToString();
         } 
+
+        public string EnglishTranslate(string input)
+        {
+            dict();
+            StringBuilder english = new StringBuilder();
+            
+            return english.ToString();
+        }
     }
 }

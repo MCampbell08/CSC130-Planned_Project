@@ -21,5 +21,14 @@ namespace Multi_TranslatorTest
         {
 
         }
+        [TestMethod]
+        public void MorseToEnglish()
+        {
+            Morse morse = new Morse();
+            string input = ".... . .-.. .-.. --- / -.-. .- .-.. . -...";
+            string expected = "HELLO CALEB";
+            string actual = morse.EnglishTranslate(input);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
