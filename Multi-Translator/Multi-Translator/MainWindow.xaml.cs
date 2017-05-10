@@ -76,9 +76,17 @@ namespace Multi_Translator
                         break;
                     }
                     targetedLanguage = lang.Value;
-                    trans.Translate(input, detectedLanguage, targetedLanguage);
-                    outputText.Text = trans.GetTranslatedText();
-                    break;
+                    if (detectedLanguage == targetedLanguage)
+                    {
+                        outputText.Text = input;
+                        break;
+                    }
+                    else
+                    {
+                        trans.Translate(input, detectedLanguage, targetedLanguage);
+                        outputText.Text = trans.GetTranslatedText();
+                        break;
+                    }
                 }
             }
         }

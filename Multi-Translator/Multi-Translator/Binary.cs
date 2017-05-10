@@ -15,9 +15,14 @@ namespace Multi_Translator
             foreach (char letter in input.ToCharArray())
             {
                 result += Convert.ToString(letter, 2).PadLeft(8, '0');
+                result += " ";
             }
-
             return result;
         }
+
+        //public string TranslateToEnglish(string input)
+        //{
+
+        //}
     }
 }

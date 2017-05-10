@@ -21,7 +21,7 @@ namespace Multi_TranslatorTest
         {
             Binary binary = new Binary();
             string input = "e";
-            string expected = "01100101";
+            string expected = "01100101 ";
             string actual = binary.TranslateToBinary(input);
             Assert.AreEqual(expected, actual);
         }
