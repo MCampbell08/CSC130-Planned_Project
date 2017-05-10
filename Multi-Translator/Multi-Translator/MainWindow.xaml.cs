@@ -65,10 +65,11 @@ namespace Multi_Translator
                 else if (lang.Key == languageList_output.SelectedItem.ToString())
                 {
                     targetedLanguage = lang.Value;
+                    trans.Translate(input, detectedLanguage, targetedLanguage);
+                    outputText.Text = trans.GetTranslatedText();
+                    break;
                 }
             }
-            trans.Translate(input, detectedLanguage, targetedLanguage);
-            outputText.Text = trans.GetTranslatedText();
         }
     }
 }
